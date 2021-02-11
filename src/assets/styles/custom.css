@@ -1,0 +1,19 @@
+ 
+:root {
+    --first-color: #878ecd;
+    --second-color: #b9bbdf;
+    --third-color: #dde7f2;
+    --fourth-color: #dff4f3;
+    --fifth-color: #99bbad;
+    --sixth-color: #91091e;
+    --seventh-color: #ff577f;
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
