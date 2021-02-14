@@ -1,17 +1,20 @@
 <template>
-	<div class="text-center" id="app">
-		<h1 class="text-center">Welcome to Dev Camper</h1>
-		<p class="text-muted text-center">Choose your bootcamp</p>
-		<b-button variant="info">
-       Browse bootcamps
-    </b-button>
+	<div id="app">
+		<Header/>
+		<router-view></router-view>
+		<Footer/>
 	</div>
 </template>
 
 <script>
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 export default {
 	name: "App",
-	components: {},
+	components: {
+		Header: Header,
+		Footer: Footer,
+	},
 };
 </script>
 

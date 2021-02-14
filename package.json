@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@sweetalert2/theme-bootstrap-4": "^4.0.2",
     "animate.js": "^2.0.2",
+    "animejs": "^3.2.1",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
