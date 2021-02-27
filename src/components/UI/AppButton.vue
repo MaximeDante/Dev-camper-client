@@ -34,7 +34,7 @@ export default {
 .button:hover,
 .button:active {
   background-color: rgb(51, 51, 51);
-  border: 1px solid black;
+  /* border: 1px solid black; */
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 

@@ -1,18 +1,78 @@
 <template>
 	<b-navbar fixed toggleable class="navbar">
 		<div class="container">
-			<b-navbar-brand class="nav-brand"  href="#">DevCamper</b-navbar-brand>
-			<b-navbar-nav class="nav-items">
-				<b-nav-item class="nav-item ">Login</b-nav-item>
-				<b-nav-item class="nav-item ">Register</b-nav-item>
-				<b-nav-item class="nav-item ">Browse Bootcamps</b-nav-item>
+			<b-navbar-brand class="nav-brand" href="#">DevCamper</b-navbar-brand>
+			<b-navbar-nav v-show="!isAuthenticated" class="nav-items">
+				<b-nav>
+					<b-nav-item @click="onSignInClick" class="nav-item "
+						>Login</b-nav-item
+					>
+					<b-nav-item @click="onSignUpClick" class="nav-item "
+						>Register</b-nav-item
+					>
+					<b-nav-item class="nav-item ">Browse Bootcamps</b-nav-item>
+				</b-nav>
 			</b-navbar-nav>
+			<b-dropdown
+				v-show="isAuthenticated"
+				variant="clear"
+				:text="currentUserName"
+			>
+				<b-dropdown-item href="#">Manage Bootcamp</b-dropdown-item>
+				<b-dropdown-item href="#">Manage Reviews</b-dropdown-item>
+				<b-dropdown-item href="#">Manage Account</b-dropdown-item>
+				<b-dropdown-item @click="logout">Logout</b-dropdown-item>
+			</b-dropdown>
 		</div>
 	</b-navbar>
 </template>
 
 <script>
-export default {};
+import { mapGetters, mapActions } from "vuex";
+export default {
+	name: "nav-bar",
+	components: {},
+	data() {
+		return {};
+	},
+	mounted() {},
+	computed: {
+		...mapGetters({
+			isAuthenticated: "auth/isAuthenticated",
+			loggedUser: "auth/loggedUser",
+		}),
+		currentUserName() {
+			let name = "";
+			if (this.loggedUser && this.loggedUser.name) {
+				name = this.loggedUser.name;
+			}
+			return name;
+		},
+	},
+	watch: {},
+	methods: {
+		...mapActions({
+			showSignUp: "modal/changeSignUpVisibility",
+			showSignIn: "modal/changeSignInVisibility",
+			logoutUser: "auth/logoutUser",
+		}),
+		onSignInClick() {
+			this.showSignIn(true);
+		},
+		onSignUpClick() {
+			this.showSignUp(true);
+		},
+		async logout() {
+			const response = await this.$services.authService.logout();
+			if (response && response.data) {
+				console.log(response.data);
+				this.logoutUser();
+			} else if (response && response.errors) {
+				console.log("error", response.errors);
+			}
+		},
+	},
+};
 </script>
 
 <style scoped>
@@ -44,21 +104,23 @@ export default {};
 	border: 2px solid var(--second-color);
 }
 
-@media (max-width: 768px) {
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .nav-items{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
+.navbar-nav .open .dropdown-menu {
+	background-color: var(--fifth-color);
+	border-color: var(--fifth-color);
 }
 
-
+@media (max-width: 768px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.nav-items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
 </style>
