@@ -7,7 +7,6 @@
 			<h1>Find a Coding Bootcamp</h1>
 			<p class="ml11">
 				<span class="text-wrapper">
-					<span class="line line1">|</span>
 					<span class="letters"
 						>Find rate and read reviews on coding bootcamps
 					</span>
@@ -83,10 +82,13 @@ export default {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-auto-rows: minmax(50px, auto);
+	/* max-width: 1117px; */
+	/* padding: 0 50px; */
+	max-height: 100vh;
 }
 
 .home-container__image{
-	width: 79%;
+	width: 80%;
 }
 
 .home-container__text {
