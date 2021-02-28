@@ -25,12 +25,11 @@ export default {
 
 <style scoped>
 .spinner-container {
-	top: 40%;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	top: 50%;
+	left: 50%;
 	position: fixed;
 	z-index: 10000;
+	transform: translate(-50%, -50%);
    /* backdrop-filter: blur(4px); */
 }
 .spinner {
@@ -39,7 +38,6 @@ export default {
 	height: 40px;
 	position: relative;
 	text-align: center;
-
 	-webkit-animation: sk-rotate 2s infinite linear;
 	animation: sk-rotate 2s infinite linear;
 }
