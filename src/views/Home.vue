@@ -1,26 +1,28 @@
 <template>
-	<section class="home-container mb-4">
-		<div class="home-container__image">
+	<section class="home-container">
+		<!-- <div class="home-container__image">
 			<b-img :src="image" fluid alt="home-image" />
-		</div>
-		<div class="home-container__text">
+		</div> -->
+		<!-- <div class="home-container__text">
 			<h1>Find a Coding Bootcamp</h1>
-			<p class="ml11">
+ <p class="ml11">
 				<span class="text-wrapper">
 					<span class="letters"
 						>Find rate and read reviews on coding bootcamps
 					</span>
 				</span>
 			</p>
-			<AppButton type="button" btn-style="inverted">Find Bootcamps</AppButton>
-		</div>
+			<router-link to="/bootcamps">
+				<AppButton type="button" btn-style="inverted">Find Bootcamps</AppButton>
+			</router-link>
+		</div> -->
 	</section>
 </template>
 
 <script>
 import anime from "animejs/lib/anime.es.js";
 export default {
-	name: "Home",
+	name: "home",
 	components: {},
 	data() {
 		return {
@@ -84,7 +86,7 @@ export default {
 	grid-auto-rows: minmax(50px, auto);
 	/* max-width: 1117px; */
 	/* padding: 0 50px; */
-	max-height: 100vh;
+	min-height: 100vh;
 }
 
 .home-container__image{

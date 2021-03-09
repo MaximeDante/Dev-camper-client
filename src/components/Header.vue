@@ -1,7 +1,7 @@
 <template>
-	<b-navbar fixed toggleable class="navbar">
+	<b-navbar fixed navbar-fixed-top class="navbar">
 		<div class="container">
-			<b-navbar-brand class="nav-brand" href="#">DevCamper</b-navbar-brand>
+			<b-navbar-brand class="nav-brand" href="/">DevCamper</b-navbar-brand>
 			<b-navbar-nav v-show="!isAuthenticated" class="nav-items">
 				<b-nav>
 					<b-nav-item @click="onSignInClick" class="nav-item "
@@ -10,7 +10,7 @@
 					<b-nav-item @click="onSignUpClick" class="nav-item "
 						>Register</b-nav-item
 					>
-					<b-nav-item class="nav-item ">Browse Bootcamps</b-nav-item>
+					<b-nav-item class="nav-item" href="/bootcamps">Browse Bootcamps</b-nav-item>
 				</b-nav>
 			</b-navbar-nav>
 			<b-dropdown
@@ -18,7 +18,7 @@
 				variant="clear"
 				:text="currentUserName"
 			>
-				<b-dropdown-item href="#">Manage Bootcamp</b-dropdown-item>
+				<b-dropdown-item href="">Manage Bootcamp</b-dropdown-item>
 				<b-dropdown-item href="#">Manage Reviews</b-dropdown-item>
 				<b-dropdown-item href="#">Manage Account</b-dropdown-item>
 				<b-dropdown-item @click="logout">Logout</b-dropdown-item>
@@ -78,6 +78,7 @@ export default {
 <style scoped>
 .nav-brand {
 	font-size: 1.5rem;
+	z-index: 3;
 }
 .navbar {
 	background: var(--first-color);

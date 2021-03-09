@@ -1,6 +1,6 @@
 <template>
 	<div class="footer">
-		<div class="footer-copyright mt-1">
+		<div class="footer-copyright">
 			<p class="m-0">Copyrigths &copy; DevCamper {{ fullYear }}</p>
 		</div>
 		<div class="footer-social">
@@ -27,20 +27,21 @@ export default {
 
 <style scoped>
 .footer {
+	position: absolute;
+	width: 100%;
+	/* bottom: 0;
 	background: var(--fourth-color);
 	display: flex;
 	flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
+	justify-content: center;
+	align-items: center; */
 }
-.footer-social a {
+/* .footer-social a {
 	color: var(--fifth-color);
-    margin-left: 1rem;
-    font-size: 1.5rem;
+	margin-left: 1rem;
+	font-size: 1.5rem;
 }
 .footer-social a:hover {
 	color: var(--first-color);
-}
-
+} */
 </style>

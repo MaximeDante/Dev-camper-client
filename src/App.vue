@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SignInModal from '@/components/auth/SignIn'
@@ -43,19 +42,7 @@ export default {
 
 	},
 	methods: {
-		async getData(){
-			console.log('fetching data')
-			const response = await axios.get('http://localhost:5000/api/v1/bootcamps');
-			console.log('response', response);
-			if (response && response.data){
-				this.array = response.data
-				if(this.array.data){
-					this.array = this.array.data
-						console.log('data', this.array);
-				}
-			
-			}
-		}
+		
 	},
 };
 </script>
@@ -65,7 +52,8 @@ export default {
 	font-family: Poppins, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #f4f9fc !important;
-   
+	background-color: #f4f9fc !important; 
+	position: relative;  
+	min-height: 100vh;
 }
 </style>
