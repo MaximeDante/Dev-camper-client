@@ -1,30 +1,34 @@
 <template>
-	<b-navbar fixed toggleable class="navbar">
-		<div class="container">
-			<b-navbar-brand class="nav-brand" href="#">DevCamper</b-navbar-brand>
-			<b-navbar-nav v-show="!isAuthenticated" class="nav-items">
-				<b-nav>
-					<b-nav-item @click="onSignInClick" class="nav-item "
-						>Login</b-nav-item
-					>
-					<b-nav-item @click="onSignUpClick" class="nav-item "
-						>Register</b-nav-item
-					>
-					<b-nav-item class="nav-item ">Browse Bootcamps</b-nav-item>
-				</b-nav>
-			</b-navbar-nav>
-			<b-dropdown
-				v-show="isAuthenticated"
-				variant="clear"
-				:text="currentUserName"
-			>
-				<b-dropdown-item href="#">Manage Bootcamp</b-dropdown-item>
-				<b-dropdown-item href="#">Manage Reviews</b-dropdown-item>
-				<b-dropdown-item href="#">Manage Account</b-dropdown-item>
-				<b-dropdown-item @click="logout">Logout</b-dropdown-item>
-			</b-dropdown>
-		</div>
-	</b-navbar>
+	<header>
+		<b-navbar fixed class="navbar">
+			<div class="container">
+				<b-navbar-brand class="nav-brand" href="/">DevCamper</b-navbar-brand>
+				<b-navbar-nav v-show="!isAuthenticated" class="nav-items">
+					<b-nav>
+						<b-nav-item @click="onSignInClick" class="nav-item "
+							>Login</b-nav-item
+						>
+						<b-nav-item @click="onSignUpClick" class="nav-item "
+							>Register</b-nav-item
+						>
+						<b-nav-item class="cta" href="/bootcamps"
+							>Browse Bootcamps</b-nav-item
+						>
+					</b-nav>
+				</b-navbar-nav>
+				<b-dropdown
+					v-show="isAuthenticated"
+					variant="clear"
+					:text="currentUserName"
+				>
+					<b-dropdown-item href="">Manage Bootcamp</b-dropdown-item>
+					<b-dropdown-item href="#">Manage Reviews</b-dropdown-item>
+					<b-dropdown-item href="#">Manage Account</b-dropdown-item>
+					<b-dropdown-item @click="logout">Logout</b-dropdown-item>
+				</b-dropdown>
+			</div>
+		</b-navbar>
+	</header>
 </template>
 
 <script>
@@ -76,11 +80,16 @@ export default {
 </script>
 
 <style scoped>
+header{
+  /* width: 100%;
+  position: fixed;
+  z-index: 100; */
+}
 .nav-brand {
 	font-size: 1.5rem;
 }
 .navbar {
-	background: var(--first-color);
+	background: var(--third-color);
 }
 
 .nav-items {
@@ -102,6 +111,13 @@ export default {
 	right: 10%;
 	bottom: 0;
 	border: 2px solid var(--second-color);
+}
+
+.cta {
+	background-color: var(--first-color);
+}
+.cta:hover{
+	background-color: var(--second-color);
 }
 
 .navbar-nav .open .dropdown-menu {
