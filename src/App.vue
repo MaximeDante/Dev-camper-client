@@ -53,7 +53,6 @@ export default {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #f4f9fc !important; 
-	position: relative;  
 	min-height: 100vh;
 }
 </style>

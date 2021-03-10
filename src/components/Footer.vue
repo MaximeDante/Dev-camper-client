@@ -1,13 +1,9 @@
 <template>
-	<div class="footer">
-		<div class="footer-copyright">
-			<p class="m-0">Copyrigths &copy; DevCamper {{ fullYear }}</p>
+	<footer class="footer">
+		<div class="container">
+			<div class="copyright text-center">&copy; {{ fullYear }} Dev Camper</div>
 		</div>
-		<div class="footer-social">
-			<a href="#"><i class="fab fa-facebook"></i></a>
-			<a href="#"><i class="fab fa-twitter"></i></a>
-		</div>
-	</div>
+	</footer>
 </template>
 
 <script>
@@ -27,21 +23,11 @@ export default {
 
 <style scoped>
 .footer {
-	position: absolute;
 	width: 100%;
-	/* bottom: 0;
-	background: var(--fourth-color);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
+	background-color: #2c2c2c;
+	padding: 1rem 0;
 }
-/* .footer-social a {
-	color: var(--fifth-color);
-	margin-left: 1rem;
-	font-size: 1.5rem;
+.copyright {
+	color: white;
 }
-.footer-social a:hover {
-	color: var(--first-color);
-} */
 </style>
