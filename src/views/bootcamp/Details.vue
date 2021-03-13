@@ -51,9 +51,9 @@
 					</b-card-text>
 					<b-card-text>
 						<b-list-group flush>
-							<b-list-group-item> ✔️ Housing</b-list-group-item>
-							<b-list-group-item> ❌ Job Assistance</b-list-group-item>
-							<b-list-group-item> ✔️ Job Guarantee</b-list-group-item>
+							<b-list-group-item> {{iconTodisplay(bootcamp.housing)}} Housing</b-list-group-item>
+							<b-list-group-item>  {{iconTodisplay(bootcamp.jobAssistance)}} Job Assistance</b-list-group-item>
+							<b-list-group-item>  {{iconTodisplay(bootcamp.jobGuarantee)}} Job Guarantee</b-list-group-item>
 						</b-list-group>
 					</b-card-text>
 				</b-card>
@@ -64,7 +64,9 @@
 
 <script>
 import Course from "@/components/Course";
+import reusableFunctions from "@/mixins/reusableFunctions"
 export default {
+	mixins: [reusableFunctions],
 	name: "Bootcamp-details",
 	components: {
 		Course,

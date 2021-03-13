@@ -26,6 +26,9 @@
 export default {
 	name: "course",
 	components: {},
+	props: {
+		id: {},
+	},
 	data() {
 		return {
 			isLoading: false,
