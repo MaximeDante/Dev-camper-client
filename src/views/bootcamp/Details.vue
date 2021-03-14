@@ -13,7 +13,8 @@
 				</p>
 			</div>
 			<div class="courses-container">
-				<Course />
+				<Course
+				:id="bootcamp.id" />
 			</div>
 		</article>
 		<aside class="aside">

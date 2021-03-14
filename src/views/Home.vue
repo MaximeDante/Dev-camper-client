@@ -22,13 +22,13 @@
 					clickMode="push"
 				></vue-particles>
 			</div>
-			<div>
-				<router-link to="/bootcamps">
-					<AppButton class="cta-button" type="button" btn-style="inverted"
-						>Find Bootcamps</AppButton
-					>
-				</router-link>
-			</div>
+		</div>
+		<div class="text-center">
+			<router-link to="/bootcamps">
+				<AppButton class="cta-button" type="button" btn-style="inverted"
+					>Find Bootcamps</AppButton
+				>
+			</router-link>
 		</div>
 		<div class="why-us mt-3 my-5">
 			<ul class="nav-items">
@@ -155,10 +155,10 @@ export default {
 
 <style>
 .intro {
+	position: relative;
 	padding-top: 4rem;
 }
 .intro-text {
-	position: relative;
 	height: 18rem;
 }
 .particles-js {
@@ -167,6 +167,9 @@ export default {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+.cta-button {
+	width: 30%;
 }
 .why-us {
 	padding: 2rem 0;
@@ -209,6 +212,9 @@ hr {
 	.caption {
 		margin-left: 0;
 		margin-right: 0;
+	}
+	.cta-button {
+		width: 50%;
 	}
 	.testimonials .testimonials-ccontent {
 		display: flex;
