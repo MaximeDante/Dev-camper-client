@@ -191,7 +191,7 @@ export default {
 			const response = await this.$services.authService.login(this.form);
 			if (response && response.data) {
 				if (response.data.token) {
-					this.$cookies.set("token", response.data.token, 60 * 60 * 24);
+					this.$cookies.set("dev-camper-token", response.data.token, 60 * 60 * 24);
 					this.setToken(response.data.token);
 				}
 				// const getUser = await this.$services.authService.getCurrentUser()

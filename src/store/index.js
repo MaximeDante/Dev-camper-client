@@ -4,6 +4,8 @@ import Vuex from "vuex";
 import modal from "./modal";
 import auth from "./auth";
 
+import createPersistedState from "vuex-persistedstate";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -11,4 +13,5 @@ export default new Vuex.Store({
         modal,
 		auth,
 	},
+	plugins: [createPersistedState()],
 });

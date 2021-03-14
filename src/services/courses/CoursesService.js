@@ -1,5 +1,5 @@
 import { ServiceFunctions } from "@/utils/services";
-const resource = "bootcamps";
+const resource = "courses";
 
 export default class BootcampsService {
 	constructor($api) {
@@ -18,9 +18,9 @@ export default class BootcampsService {
 		}
 		return { data: null, errors: [] };
 	}
-	getAll() {
+	getAll(id) {
 		try {
-			return this.api.get(`${resource}/`).catch((err) => {
+			return this.api.get(`bootcamps/${id}/${resource}/`).catch((err) => {
 				const errors = ServiceFunctions.getErrors(err);
 				console.log(errors);
 				return { data: null, errors: errors };
@@ -30,9 +30,9 @@ export default class BootcampsService {
 		}
 		return { data: null, errors: [] };
 	}
-	create() {
+	create(id, payload) {
 		try {
-			return this.api.post(`${resource}/`).catch((err) => {
+			return this.api.post(`bootcamps/${id}/${resource}/`, payload).catch((err) => {
 				const errors = ServiceFunctions.getErrors(err);
 				console.log(errors);
 				return { data: null, errors: errors };
